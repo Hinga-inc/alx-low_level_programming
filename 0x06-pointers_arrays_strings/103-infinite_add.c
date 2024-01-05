@@ -1,9 +1,7 @@
-#include <main.h>
 /**
  * infinite_add - Add up two numbers stored in given char arrays
- * @n1: The first number
- * @n2: The second number
- * @r: Pointer to the buffer to store result
+ * @n1 is The first number @n2 is  The second number
+ * @r is Pointer to the buffer to store result
  * @size_r: The size of the buffer
  *
  * Return: 0 if buffer too small to store result, else return pointer to buffer
