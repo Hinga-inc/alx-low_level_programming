@@ -1,0 +1,66 @@
+.\"Manpage for _printf
+.TH _printf (3) "29/01/2024" 1.0" "_printf programmer's manual"
+
+.SH NAME
+
+_printf
+
+.SH SYNOPSIS
+
+.B #include "main.h"
+
+.PP
+
+.N int _printf(const char *format,  ...)
+.B ...)
+
+.SH DESCRIPTION
+
+.PP
+
+produce output to stdout according to a format descriped below similar to the printf() function.
+
+.SH OPTION
+
+.RS
+.nf
+ -%c -  prints a single char.
+- %s - prints the argument as a string.
+- %% -  Prints a single perecentage sign to the stream.
+- %i / %d - Prints signed decimal integer.
+.RE
+
+.SH EXAMPLES
+
+.B With main.c we can test our functions:
+
+.PP
+#include "main.h"
+.PP
+_printf("Character:[%c]\n", 'H');
+.PP
+Output: character: H
+.PP
+_printf("String:[%s]\n", "I am a string !");
+.PP
+ Output: string: I am s string !
+.PP
+_printf("Percent:[%%]\n");
+.PP
+Output: percent: %
+.PP
+_printf("integer: %i\n", 10);
+.PP
+Output: integer: 10
+.PP
+_printf("decimal: %d\n", 100);
+.PP
+Output: decimal: 100
+
+.B Return value
+
+On success, _printf returns the number of printed characters. If formats is error or NULL returns -1
+
+.SH AUTHOR
+
+HINGA PETER
