@@ -1,2 +1,1 @@
-# alx-low_level_programming
-this is my first first repo using C language
+this is a project covering my C projects in alx software engineering programme
