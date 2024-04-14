@@ -8,25 +8,22 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	unsigned int i = 0;
-	hash_table_t *ht = malloc(sizeof(hash_table_t));
 
-	if (ht == NULL)
+	hash_table_t *h_t = NULL;
+	hash_node_t **h_a = NULL;
+
+	h_a = calloc(size, sizeof(char *));
+	if (h_a == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
+		free(h_a);
 		return (NULL);
 	}
 
-	ht->size = size;
-	ht->array = malloc(sizeof(hash_node_t *) * size);
-	if (ht->array == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
+	h_t = calloc(1, sizeof(hash_table_t));
+	if (h_t == NULL)
 		return (NULL);
-	}
 
-	for (; i < size; i++)
-		ht->array[i] = NULL;
-
-	return (ht);
+	h_t->size = size;
+	h_t->array = h_a;
+	return (h_t);
 }
