@@ -1,0 +1,32 @@
+# Variables
+CC = gcc
+SRC = $(wildcard *.c)
+NAME = school
+
+# Implicit Rules
+.PHONY: all clean fclean oclean re
+
+# Compiler Flags
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# All rule
+all: $(NAME)
+
+# Compilation rule
+$(NAME): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $@
+
+# Clean rules
+clean:
+	$(RM) -f *~ *.swp $(NAME)
+
+fclean: clean
+	$(RM) -f $(OBJ)
+
+oclean:
+	$(RM) -f $(OBJ)
+
+re: fclean all
+
+# RM variable
+RM = rm -f
